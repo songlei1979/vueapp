@@ -23,6 +23,12 @@
         >
             <text :style="{color: 'white'}">My Button</text>
         </touchable-opacity>
+        <touchable-opacity
+                :on-press="toParents"
+                :style="{backgroundColor:'red',padding:10}"
+        >
+            <text :style="{color: 'white'}">Parents</text>
+        </touchable-opacity>
 
         <!--    <flat-list-->
         <!--            :data="countries"-->
@@ -71,6 +77,7 @@
             .then(response => response.json())
             .then(data => {
                 this.posts = data.data.children
+                // console.log(data)
             })
         },
         data() {
@@ -89,6 +96,10 @@
             handleButton() {
                 // this.myInput = 'Button clicked'
                 this.navigation.navigate("Another");
+            },
+            toParents() {
+                // this.myInput = 'Button clicked'
+                this.navigation.navigate("Parents");
             },
             // renderList: function (item) {
             //     return ( < Text > {item.name} < /Text>)

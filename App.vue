@@ -11,10 +11,12 @@
     } from "vue-native-router";
     import MainScreen from "./Main.vue";
     import AnotherScreen from "./Another.vue";
+    import Parents from "./parents.vue";
      const StackNavigator = createStackNavigator(
         {
             Home: MainScreen,
             Another: AnotherScreen,
+            Parents: Parents,
         },
         {
             initialRouteName: 'Home'
